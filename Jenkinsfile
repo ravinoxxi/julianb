@@ -2,8 +2,15 @@ pipeline{
 	agent any
 	stages{
 		stage('Starting'){
-			steps{			
-				sh 'echo starting.....'
+			steps{		
+
+			}
+		}	
+		stage('Checking Docker'){
+			stepts{
+				sh 'sudo docker ps'
+		sh 'echo starting.....'
+
 			}
 		}
 	}
