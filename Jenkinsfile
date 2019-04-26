@@ -18,6 +18,13 @@ pipeline{
 				script{
 					dockerImage=docker.build registry + ":$BUILD_NUMBER"
 
+					}
+				}
+
+			}
+
+
+
 	stage('Push Image DockerHub'){
 		steps{
 			script{
@@ -28,7 +35,7 @@ pipeline{
 						}
 					}
 
-					}
+					
 				}	
 		
 			}
