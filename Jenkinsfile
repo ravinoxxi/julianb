@@ -7,7 +7,7 @@ pipeline{
 			}
 		}	
 		stage('Checking Docker'){
-			stepts{
+			steps{
 				sh 'sudo docker ps'
 		sh 'echo starting.....'
 
