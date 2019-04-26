@@ -1,17 +1,15 @@
 pipeline{
-	agent any
-	stages{
-		stage('Starting'){
-			steps{		
+        agent any
+        stages{
+                stage('Starting'){
+                        steps
+                                sh 'sudo docker ps'
+         		       sh 'echo starting.....'
 
-			}
-		}	
-		stage('Checking Docker'){
-			steps{
-				sh 'sudo docker ps'
-		sh 'echo starting.....'
-
-			}
-		}
-	}
+                        }
+                }
+        }
 }
+~
+~
+
