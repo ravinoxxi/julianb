@@ -1,4 +1,8 @@
 pipeline{
+	environment{
+		registry = "ravinoxxi/julianb"
+		registryCredential = "dockerhub"
+	}
 	agent any
 	stages{
 		stage('Starting'){
@@ -9,19 +13,14 @@ pipeline{
 					}
 				}
 
-	stage('Build Image PHP54'){
+	stage('Build Container'){
 			steps{					
-				sh 'sudo docker build --tag=php54 .'
+				script{
+					dockerImage=docker.build registry + ":$BUILD_NUMBER"
 
 					}
-				}
-
-	stage('Deploy Container'){
-			steps{					
-				sh 'sudo docker-compose up -d'
-
-					}
-				}		
+				}	
 		
+			}
+		}
 	}
-}
